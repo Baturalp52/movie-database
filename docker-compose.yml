@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 services:
   database:
     image: postgres:13.11
@@ -16,5 +16,16 @@ services:
       - 3000:3000
   backend:
     build: ./backend
+    environment:
+      - PORT=3001
+      - JWT_SECRET=6Zb2DpBzDZNt1SCIOG2ehHpr,tYs+8q9jG+w725vF-EMS6BrUqc9MYHE=u-asxI7
+      - JWT_EXPIRATION=31536000
+      - DATABASE_DIALECT=postgres
+      - DATABASE_HOST=172.17.0.1
+      - DATABASE_PORT=5432
+      - DATABASE_USER=db_user
+      - DATABASE_PASSWORD=db_pass
+      - DATABASE_NAME=movie_database_db
+
     ports:
       - 8000:3001

@@ -5,7 +5,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=db_pass
       - POSTGRES_USER=db_user
@@ -20,6 +20,8 @@ services:
       - 3000:3000
   backend:
     build: ./backend
+    volumes:
+      - backend:/backend/uploads
     environment:
       - PORT=3001
       - JWT_SECRET=6Zb2DpBzDZNt1SCIOG2ehHpr,tYs+8q9jG+w725vF-EMS6BrUqc9MYHE=u-asxI7
@@ -33,3 +35,6 @@ services:
 
     ports:
       - 8000:3001
+volumes:
+  backend:
+  postgres_data:

@@ -1,9 +1,6 @@
-
 # Movie Database Project
 
 Open source movie database project for hobby
-
-
 
 # Installation
 
@@ -22,7 +19,7 @@ Go project directory
 Fetch submodules
 
 ```bash
-  git submodule update --recursive
+  git submodule update --init --recursive
 ```
 
 Run docker
@@ -30,5 +27,3 @@ Run docker
 ```bash
   docker compose up -d
 ```
-
-  
